@@ -8,7 +8,7 @@ class SignIn extends Component {
     return (
       <div style={{width: '50%'}} className="container">
         <form onSubmit={null} className="white">
-          <h5 className="grey-text text-darken-3">Sign In</h5>
+          <h5 className="grey-text text-darken-3">Login</h5>
           <div className="input-field">
             <label htmlFor="email">Email</label>
             <input type="email" id="email" onChange={null}/>
