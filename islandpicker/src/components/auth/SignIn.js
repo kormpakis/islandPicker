@@ -16,6 +16,7 @@ class SignIn extends Component {
     console.log(this.state);
     // this.props.signIn(this.state)
   }
+
   render() {
     return (
       <div style={{width: '50%'}} className="container">
@@ -24,19 +25,17 @@ class SignIn extends Component {
           <div className="row">
             <div className="input-field col s12">
               <input id="email" type="email" className="validate" onChange={this.handleChange}/>
-                <label htmlFor="email">Email</label>
+              <label htmlFor="email">Email</label>
             </div>
-          </div>
-          <div className="row">
             <div className="input-field col s12">
               <input id="password" type="password" className="validate" onChange={this.handleChange}/>
-                <label htmlFor="password">Password</label>
+              <label htmlFor="password">Password</label>
             </div>
-          </div>
-          <div className="input-field">
-            <button className="btn pink lighten-1 z-depth-0">Login</button>
-            <div className="red-text center">
-              {/*{authError ? <p>{authError}</p> : null}*/}
+            <div className="col s12 input-field">
+              <button className="btn pink lighten-1 z-depth-0">Login</button>
+              <div className="red-text center">
+                {/*{authError ? <p>{authError}</p> : null}*/}
+              </div>
             </div>
           </div>
         </form>
