@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { signUp } from '../../store/actions/authActions';
 
 class SignUp extends Component {
   state = {
@@ -15,7 +17,7 @@ class SignUp extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault()
-    // this.props.signUp(this.state)
+    this.props.signUp(this.state)
   }
   render() {
     return (
@@ -24,19 +26,19 @@ class SignUp extends Component {
           <h5 className="grey-text text-darken-3">Register</h5>
           <div className="row">
             <div className="input-field col s12 m6">
-              <input id="firstName" type="text" className="validate"/>
+              <input id="firstName" type="text" className="validate" onChange={this.handleChange}/>
                 <label htmlFor="firstName">First Name</label>
             </div>
             <div className="input-field col s12 m6">
-              <input id="lastName" type="text" className="validate"/>
+              <input id="lastName" type="text" className="validate" onChange={this.handleChange}/>
                 <label htmlFor="lastName">Last Name</label>
             </div>
             <div className="input-field col s12">
-              <input id="password" type="password" className="validate"/>
+              <input id="password" type="password" className="validate" onChange={this.handleChange}/>
                 <label htmlFor="password">Password</label>
             </div>
             <div className="input-field col s12">
-              <input id="email" type="email" className="validate"/>
+              <input id="email" type="email" className="validate" onChange={this.handleChange}/>
                 <label htmlFor="email">Email</label>
             </div>
             <div className="col s12 input-field">
@@ -52,4 +54,17 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+const mapStateToProps = (state) => {
+  return {
+    authError: state.auth.authError,
+    auth: state.firebase.auth
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signUp: (newUser) => dispatch(signUp(newUser))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
