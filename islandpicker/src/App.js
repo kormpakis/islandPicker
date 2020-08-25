@@ -14,7 +14,7 @@ function App() {
           <Route path="/login" component={SignIn}/>
           <Route path="/register" component={SignUp}/>
         </Switch>
-        <h1>Ready for some vacation?</h1>
+        <h1 style={{marginTop: '50px'}} className="container">So... where to next?</h1>
         <PercentageBar percentage={80}/>
       </div>
     </BrowserRouter>
