@@ -1,21 +1,37 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, {useEffect} from 'react';
+import {Link} from 'react-router-dom';
 import SignedInLinks from './SignedInLinks';
 import SignedOutLinks from './SignedOutLinks';
 import {connect} from 'react-redux';
 import {isLoaded} from 'react-redux-firebase';
+import 'materialize-css/dist/css/materialize.min.css'
+import M from  'materialize-css/dist/js/materialize.min.js'
 
 const Navbar = (props) => {
-  const { auth, profile } = props;
-  const links = auth.uid ? <SignedInLinks profile={profile} /> : <SignedOutLinks />;
+  useEffect(() => {
+    let navbar = document.querySelector('#slide-out');
+    M.Sidenav.init(navbar, {});
+  })
+
+  const {auth, profile} = props;
+  const links = auth.uid ? <SignedInLinks profile={profile}/> : <SignedOutLinks/>;
 
   return (
-    <nav className="nav-wrapper blue darken-4">
-      <div className="container">
-        <Link to='/' className="brand-logo">IslandPicker</Link>
-        {isLoaded(auth) && links}
-      </div>
-    </nav>
+    <div>
+      <nav className="nav-extended blue darken-4">
+        <div className="nav-wrapper container">
+          <a href="/" className="brand-logo">IslandPicker</a>
+          <a href="#" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+          <ul id="nav-mobile" className="right hide-on-med-and-down">
+            {isLoaded(auth) && links}
+          </ul>
+        </div>
+      </nav>
+
+      <ul id="slide-out" className="sidenav">
+        <li>{isLoaded(auth) && links}</li>
+      </ul>
+    </div>
   );
 }
 

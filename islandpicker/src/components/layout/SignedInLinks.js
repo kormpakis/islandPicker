@@ -5,7 +5,7 @@ import {signOut} from '../../store/actions/authActions';
 
 const SignedInLinks = (props) => {
   return (
-    <ul className="right">
+    <ul className="">
       <li><NavLink to="/">QuestionMark</NavLink></li>
       <li><a onClick={props.signOut}>Log Out</a></li>
     </ul>
