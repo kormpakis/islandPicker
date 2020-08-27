@@ -11,7 +11,7 @@ class Footer extends Component {
         <div className="container">
           <div className="row">
             <div className="col l6 m4 s8 offset-s3">
-              <h5 className="white-text">Who we are?</h5>
+              <h5 className="white-text">Who we are</h5>
               <p className="grey-text text-lighten-4">Need some help choosing your next destination? IslandPicker is here to help you!</p>
             </div>
             {/*<div className="col l3 m4 s8 offset-s3">*/}

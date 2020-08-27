@@ -20,7 +20,7 @@ const Navbar = (props) => {
 
   return (
     <div>
-      <nav className="nav-extended blue darken-4">
+      <nav className="nav-extended blue darken-3">
         <a href="#" data-target="slide-out" className="sidenav-trigger show-on-large"><i className="material-icons">menu</i></a>
         <div className="nav-wrapper container">
           <a href="/" className="brand-logo show-on-large">IslandPicker</a>
