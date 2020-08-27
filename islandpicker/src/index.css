@@ -204,3 +204,12 @@ blockquote{
     height: 30vmax;
 }
 
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+    background-color: #fff !important;
+    outline: none;
+}
+
+.indicator {
+    background-color: teal !important;
+}
+

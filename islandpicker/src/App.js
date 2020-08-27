@@ -12,12 +12,16 @@ import Footer from './components/layout/Footer'
 
 function App() {
   useEffect(() => {
-    let elements = document.querySelectorAll(".parallax");
-    M.Parallax.init(elements);
+    let parallax = document.querySelectorAll(".parallax");
+    M.Parallax.init(parallax);
+    let tabs = document.querySelectorAll(".tabs");
+    M.Tabs.init(tabs);
+    let navbar = document.querySelector('#slide-out');
+    M.Sidenav.init(navbar, {});
   })
   return (
     <body>
-    <main>
+    <main className="backgroundClass">
       <BrowserRouter>
         <Navbar/>
         <Switch>

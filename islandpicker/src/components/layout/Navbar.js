@@ -5,14 +5,9 @@ import SignedOutLinks from './SignedOutLinks'
 import {connect} from 'react-redux'
 import {isLoaded} from 'react-redux-firebase'
 import 'materialize-css/dist/css/materialize.min.css'
-import M from  'materialize-css/dist/js/materialize.min.js'
 import island from '../../images/island.jpg'
 
 const Navbar = (props) => {
-  useEffect(() => {
-    let navbar = document.querySelector('#slide-out');
-    M.Sidenav.init(navbar, {});
-  })
 
   const {auth, profile} = props;
   console.log(auth)
