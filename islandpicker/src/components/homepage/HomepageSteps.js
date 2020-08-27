@@ -4,7 +4,7 @@ function HomepageSteps(props) {
   return (
     <section className="section" id="steps">
       {/* First step */}
-      <div className="row step">
+      <div className="row step test">
         <div className="col s12 l6 stepOne">
         </div>
         <div className="col s12 l6 flow-text">
