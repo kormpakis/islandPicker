@@ -1,14 +1,14 @@
-import React from 'react';
-import HomepageSteps from '../components/Homepage/HomepageSteps';
+import React, {useEffect} from 'react'
+import HomepageSteps from '../components/homepage/HomepageSteps'
+import Parallax from '../components/dashboard/Parallax'
 
 function Home(props) {
+  let firstParallax = <h1>First parallax</h1>
   return (
     <div>
-      {/*<div className="homepage">*/}
-      {/*  <h1>j</h1>*/}
-      {/*  <h1>j</h1>*/}
-      {/*</div>*/}
-      {/* How it works section*/}
+      {/* Parallax section */}
+      <Parallax content={firstParallax} image="island.jpg"/>
+      {/* Steps section*/}
       <HomepageSteps/>
     </div>
   );

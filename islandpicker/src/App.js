@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import M from 'materialize-css'
 // Page imports
 import Home from './pages/Home'
 import SignIn from './pages/auth/SignIn'
@@ -10,6 +11,10 @@ import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 
 function App() {
+  useEffect(() => {
+    let elements = document.querySelectorAll(".parallax");
+    M.Parallax.init(elements);
+  })
   return (
     <body>
     <main>
