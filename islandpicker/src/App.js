@@ -7,6 +7,7 @@ import SignIn from './pages/auth/SignIn'
 import SignUp from './pages/auth/SignUp'
 
 // Component imports
+// Component imports
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 
